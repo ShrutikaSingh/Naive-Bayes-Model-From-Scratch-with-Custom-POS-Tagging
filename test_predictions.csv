@@ -1,4 +1,4 @@
-review,predicted_sentiment
+review,sentiment
 ./test/354863.txt,1
 ./test/566334.txt,1
 ./test/564245.txt,1

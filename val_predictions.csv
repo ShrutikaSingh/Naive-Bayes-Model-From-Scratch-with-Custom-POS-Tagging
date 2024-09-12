@@ -1,4 +1,4 @@
-review,predicted_sentiment
+review,sentiment
 ./val/597852.txt,1
 ./val/741532.txt,0
 ./val/217267.txt,1
