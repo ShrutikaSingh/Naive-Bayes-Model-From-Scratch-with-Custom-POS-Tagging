@@ -70,6 +70,14 @@ Validation Accuracy: 0.8552
 Validation Precision: 0.8636
 Validation Recall: 0.8435
 Validation F1: 0.8534
+
+DOnot remove not nor etc from stop words , accuracy increased
+vocab length = 10000
+Validation Accuracy: 0.8570
+Validation Precision: 0.8653
+Validation Recall: 0.8455
+Validation F1: 0.8553
+
 (venv) 206819985@OTS-FVFHK1DWQ05Q-MAC hw1-imdb % 
 
 <img width="908" alt="image" src="https://github.com/user-attachments/assets/3c156184-9e2b-4be9-bf22-b88f1eb0fa2c">
