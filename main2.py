@@ -24,10 +24,10 @@ class Tokenizer:
         ])
     
     def tokenize(self, text):
-        # Convert text to lowercase and split on whitespace and punctuation
-        
         text = text.lower()
         tokens = re.findall(r'\b\w+\b', text)
+        # Remove stop words
+        tokens = [token for token in tokens if token not in self.stop_words]
         return tokens
     
     def build_vocab(self, texts, vocab_size=10000):
