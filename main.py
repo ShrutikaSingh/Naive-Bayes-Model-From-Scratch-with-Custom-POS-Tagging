@@ -25,9 +25,7 @@ class Tokenizer:
         # Select the top `vocab_size` most frequent words
         most_common = sorted(word_counts.items(), key=lambda x: x[1], reverse=True)[:vocab_size]
         self.vocab = {word: idx for idx, (word, _) in enumerate(most_common)}
-        print("vocab length =",len(self.vocab))
-    
-
+        print("vocab length =", len(self.vocab))
     
     def text_to_binary_vector(self, text):
         # Create binary vector of size |vocab|
@@ -98,31 +96,34 @@ def compute_metrics(true_labels, pred_labels):
 def load_data(data_dir, split):
     texts = []
     labels = []
+    file_paths = []
+    
     if split == 'test':
         paths_file = os.path.join(data_dir, f'{split}_paths.csv')
         df = pd.read_csv(paths_file, header=None)  # Test file might not have headers
         for _, row in df.iterrows():
             review_path = os.path.join(data_dir, row[0])  # row[0] because there's no 'review' column
+            file_paths.append(row[0])
             with open(review_path, 'r', encoding='utf-8') as file:
                 texts.append(file.read())
-        return texts
+        return file_paths, texts
     else:
         label_file = os.path.join(data_dir, f'{split}_labels.csv')
         df = pd.read_csv(label_file)
         for _, row in df.iterrows():
             review_path = os.path.join(data_dir, row['review'])
+            file_paths.append(row['review'])
             with open(review_path, 'r', encoding='utf-8') as file:
                 texts.append(file.read())
             labels.append(row['sentiment'])
-        return texts, np.array(labels)
-
+        return file_paths, texts, np.array(labels)
 
 # Main function
 def main(data_src):
     # Load data
-    train_texts, train_labels = load_data(data_src, 'train')
-    val_texts, val_labels = load_data(data_src, 'val')
-    test_texts = load_data(data_src, 'test')
+    train_file_paths, train_texts, train_labels = load_data(data_src, 'train')
+    val_file_paths, val_texts, val_labels = load_data(data_src, 'val')
+    test_file_paths, test_texts = load_data(data_src, 'test')
 
     # Tokenize and convert texts to binary feature vectors
     tokenizer = Tokenizer()
@@ -141,10 +142,10 @@ def main(data_src):
     test_preds = model.predict(X_test)
 
     # Save validation and test predictions to CSV
-    val_df = pd.DataFrame({'review': range(len(val_preds)), 'predicted_sentiment': val_preds.astype(int)})
+    val_df = pd.DataFrame({'review': val_file_paths, 'sentiment': val_preds.astype(int)})
     val_df.to_csv('val_predictions.csv', index=False)
 
-    test_df = pd.DataFrame({'review': range(len(test_preds)), 'predicted_sentiment': test_preds.astype(int)})
+    test_df = pd.DataFrame({'review': test_file_paths, 'sentiment': test_preds.astype(int)})
     test_df.to_csv('test_predictions.csv', index=False)
 
     # Evaluate on validation set
