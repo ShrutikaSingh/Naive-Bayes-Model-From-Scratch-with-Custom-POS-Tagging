@@ -33,7 +33,14 @@ Validation Precision: 0.8558
 Validation Recall: 0.8499
 Validation F1: 0.8528
 
+<img width="638" alt="image" src="https://github.com/user-attachments/assets/62c44b32-0379-4b9a-8431-7d148ce08897">
 
+    # Taking this formula from slides
+    accuracy = (true_positives + true_negatives) / (true_positives+false_negatives+false_positives+true_negatives)
+    precision = true_positives / (true_positives + false_positives)
+    recall = true_positives / (true_positives + false_negatives)
+    f1 = 2 * (precision * recall) / (precision + recall)
+    
 FINSAL
 python3 main.py --data_src /Users/206819985/Documents/csci_444_assign/hw1-imdb
 vocab length = 10000
