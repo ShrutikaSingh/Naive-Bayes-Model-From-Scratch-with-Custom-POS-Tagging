@@ -8,9 +8,24 @@ import re
 class Tokenizer:
     def __init__(self):
         self.vocab = defaultdict(int)  # Dictionary to store word frequencies
+        self.stop_words = set([
+            'a', 'about', 'above', 'after', 'again', 'against', 'all', 'am', 'an', 'and', 'any', 'are', 'aren\'t', 
+            'as', 'at', 'be', 'because', 'been', 'before', 'being', 'below', 'between', 'both', 'but', 'by', 'can', 
+            'could', 'did', 'didn\'t', 'do', 'does', 'doesn\'t', 'doing', 'don\'t', 'down', 'during', 'each', 'few', 
+            'for', 'from', 'further', 'had', 'hadn\'t', 'has', 'hasn\'t', 'have', 'haven\'t', 'having', 'he', 'her', 
+            'here', 'hers', 'herself', 'him', 'himself', 'his', 'how', 'i', 'if', 'in', 'into', 'is', 'isn\'t', 'it', 
+            'its', 'itself', 'just', 'll', 'm', 'me', 'might', 'more', 'most', 'mustn\'t', 'my', 'myself', 'needn\'t', 
+            'no', 'nor', 'not', 'now', 'o', 'of', 'off', 'on', 'once', 'only', 'or', 'other', 'our', 'ours', 'ourselves', 
+            'out', 'over', 'own', 're', 's', 'same', 'shan\'t', 'she', 'should', 'shouldn\'t', 'so', 't', 'than', 'that', 
+            'the', 'their', 'theirs', 'them', 'themselves', 'then', 'there', 'these', 'they', 'this', 'those', 'through', 
+            'to', 'too', 'under', 'until', 'up', 've', 'very', 'was', 'wasn\'t', 'we', 'were', 'weren\'t', 'what', 
+            'when', 'where', 'which', 'while', 'who', 'whom', 'why', 'will', 'with', 'won\'t', 'would', 'y', 'you', 
+            'your', 'yours', 'yourself', 'yourselves'
+        ])
     
     def tokenize(self, text):
         # Convert text to lowercase and split on whitespace and punctuation
+        
         text = text.lower()
         tokens = re.findall(r'\b\w+\b', text)
         return tokens
@@ -64,6 +79,7 @@ class NaiveBayesClassifier:
             else:
                 negative_counts += X[i]
 
+        #Laplace Smothing Implementation 
         # Apply Laplace smoothing and calculate conditional probabilities
         self.positive_word_probs = (positive_counts + 1) / (num_positive + 2)
         self.negative_word_probs = (negative_counts + 1) / (num_negative + 2)
@@ -142,10 +158,10 @@ def main(data_src):
     test_preds = model.predict(X_test)
 
     # Save validation and test predictions to CSV
-    val_df = pd.DataFrame({'review': val_file_paths, 'predicted_sentiment': val_preds.astype(int)})
+    val_df = pd.DataFrame({'review': val_file_paths, 'sentiment': val_preds.astype(int)})
     val_df.to_csv('val_predictions.csv', index=False)
 
-    test_df = pd.DataFrame({'review': test_file_paths, 'predicted_sentiment': test_preds.astype(int)})
+    test_df = pd.DataFrame({'review': test_file_paths, 'sentiment': test_preds.astype(int)})
     test_df.to_csv('test_predictions.csv', index=False)
 
     # Evaluate on validation set

@@ -32,3 +32,35 @@ Validation Accuracy: 0.8534
 Validation Precision: 0.8558
 Validation Recall: 0.8499
 Validation F1: 0.8528
+
+
+FINSAL
+python3 main.py --data_src /Users/206819985/Documents/csci_444_assign/hw1-imdb
+vocab length = 10000
+Validation Accuracy: 0.8534
+Validation Precision: 0.8558
+Validation Recall: 0.8499
+Validation F1: 0.8528
+
+
+
+(venv) 206819985@OTS-FVFHK1DWQ05Q-MAC hw1-imdb % python3 main.py --data_src /Users/206819985/Documents/csci_444_assign/hw1-imdb
+
+
+
+BEFORE REMOVING STOP WORDS
+vocab length = 10000
+Validation Accuracy: 0.8534
+Validation Precision: 0.8558
+Validation Recall: 0.8499
+Validation F1: 0.8528
+(venv) 206819985@OTS-FVFHK1DWQ05Q-MAC hw1-imdb % python3 main.py --data_src /Users/206819985/Documents/csci_444_assign/hw1-imdb
+
+
+AFTER REMOVING STOP WORD ACCURACY INCREASED
+vocab length = 10000
+Validation Accuracy: 0.8552
+Validation Precision: 0.8636
+Validation Recall: 0.8435
+Validation F1: 0.8534
+(venv) 206819985@OTS-FVFHK1DWQ05Q-MAC hw1-imdb % 
