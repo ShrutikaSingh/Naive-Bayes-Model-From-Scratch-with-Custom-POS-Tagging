@@ -71,3 +71,6 @@ Validation Precision: 0.8636
 Validation Recall: 0.8435
 Validation F1: 0.8534
 (venv) 206819985@OTS-FVFHK1DWQ05Q-MAC hw1-imdb % 
+
+<img width="908" alt="image" src="https://github.com/user-attachments/assets/3c156184-9e2b-4be9-bf22-b88f1eb0fa2c">
+
