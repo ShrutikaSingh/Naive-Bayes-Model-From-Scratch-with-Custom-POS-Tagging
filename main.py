@@ -51,14 +51,14 @@ class Tokenizer:
                 vector[self.vocab[token]] = 1
         return vector
 
-# Naive Bayes Classifier Class
 class NaiveBayesClassifier:
-    def __init__(self):
+    def __init__(self, alpha=1.0):
         self.prior_positive = 0
         self.prior_negative = 0
         self.positive_word_probs = None
         self.negative_word_probs = None
         self.vocab_size = 0
+        self.alpha = alpha  # Smoothing factor
 
     def train(self, X, y):
         # Calculate priors P(positive), P(negative)
@@ -79,10 +79,10 @@ class NaiveBayesClassifier:
             else:
                 negative_counts += X[i]
 
-        #Laplace Smothing Implementation 
         # Apply Laplace smoothing and calculate conditional probabilities
-        self.positive_word_probs = (positive_counts + 1) / (num_positive + 2)
-        self.negative_word_probs = (negative_counts + 1) / (num_negative + 2)
+        # Smoothing factor alpha
+        self.positive_word_probs = (positive_counts + self.alpha) / (num_positive + self.alpha * self.vocab_size)
+        self.negative_word_probs = (negative_counts + self.alpha) / (num_negative + self.alpha * self.vocab_size)
     
     def predict(self, X):
         # Calculate log-probabilities for each class
@@ -93,7 +93,6 @@ class NaiveBayesClassifier:
         negative_scores = X @ np.log(self.negative_word_probs) + (1 - X) @ np.log(1 - self.negative_word_probs)
         
         return (log_prior_positive + positive_scores) >= (log_prior_negative + negative_scores)
-
 # Function to calculate metrics
 def compute_metrics(true_labels, pred_labels):
     true_positives = np.sum((true_labels == 1) & (pred_labels == 1))
@@ -101,7 +100,8 @@ def compute_metrics(true_labels, pred_labels):
     false_positives = np.sum((true_labels == 0) & (pred_labels == 1))
     false_negatives = np.sum((true_labels == 1) & (pred_labels == 0))
     
-    accuracy = (true_positives + true_negatives) / len(true_labels)
+    # Taking this formula from slides
+    accuracy = (true_positives + true_negatives) / (true_positives+false_negatives+false_positives+true_negatives)
     precision = true_positives / (true_positives + false_positives)
     recall = true_positives / (true_positives + false_negatives)
     f1 = 2 * (precision * recall) / (precision + recall)
