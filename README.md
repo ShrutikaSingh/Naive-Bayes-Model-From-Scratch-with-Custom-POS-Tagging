@@ -73,4 +73,7 @@ Validation F1: 0.8534
 (venv) 206819985@OTS-FVFHK1DWQ05Q-MAC hw1-imdb % 
 
 <img width="908" alt="image" src="https://github.com/user-attachments/assets/3c156184-9e2b-4be9-bf22-b88f1eb0fa2c">
+**
+When vocab length = 1000**
 
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/f36ddcfe-dbcd-4d5d-a0b7-41c780a60c22">
