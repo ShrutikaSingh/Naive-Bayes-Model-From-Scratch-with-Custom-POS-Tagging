@@ -185,7 +185,7 @@ review,sentiment
 ./val/423023.txt,1
 ./val/933714.txt,1
 ./val/223303.txt,1
-./val/798403.txt,0
+./val/798403.txt,1
 ./val/422930.txt,0
 ./val/840539.txt,0
 ./val/422963.txt,1
@@ -235,7 +235,7 @@ review,sentiment
 ./val/060535.txt,0
 ./val/033654.txt,0
 ./val/616112.txt,1
-./val/494405.txt,1
+./val/494405.txt,0
 ./val/308602.txt,1
 ./val/407746.txt,1
 ./val/162562.txt,0
@@ -268,7 +268,7 @@ review,sentiment
 ./val/369926.txt,1
 ./val/100020.txt,0
 ./val/975275.txt,0
-./val/483909.txt,0
+./val/483909.txt,1
 ./val/710458.txt,1
 ./val/157398.txt,0
 ./val/964695.txt,1
@@ -345,7 +345,7 @@ review,sentiment
 ./val/638308.txt,1
 ./val/014463.txt,1
 ./val/741232.txt,1
-./val/706345.txt,0
+./val/706345.txt,1
 ./val/538531.txt,0
 ./val/310935.txt,0
 ./val/324212.txt,0
@@ -710,7 +710,7 @@ review,sentiment
 ./val/108923.txt,0
 ./val/340309.txt,0
 ./val/830952.txt,0
-./val/774849.txt,1
+./val/774849.txt,0
 ./val/584099.txt,1
 ./val/787770.txt,0
 ./val/423539.txt,0
@@ -737,7 +737,7 @@ review,sentiment
 ./val/318127.txt,0
 ./val/005291.txt,1
 ./val/970310.txt,1
-./val/898008.txt,1
+./val/898008.txt,0
 ./val/014348.txt,0
 ./val/997313.txt,0
 ./val/505931.txt,1
@@ -757,7 +757,7 @@ review,sentiment
 ./val/157810.txt,0
 ./val/067094.txt,1
 ./val/402434.txt,0
-./val/463204.txt,1
+./val/463204.txt,0
 ./val/758532.txt,1
 ./val/922348.txt,0
 ./val/350138.txt,0
@@ -1220,7 +1220,7 @@ review,sentiment
 ./val/851523.txt,1
 ./val/983096.txt,0
 ./val/610872.txt,0
-./val/427484.txt,1
+./val/427484.txt,0
 ./val/615309.txt,1
 ./val/318183.txt,0
 ./val/142985.txt,1
@@ -1521,7 +1521,7 @@ review,sentiment
 ./val/148404.txt,1
 ./val/536974.txt,0
 ./val/578840.txt,1
-./val/173440.txt,1
+./val/173440.txt,0
 ./val/200203.txt,0
 ./val/797143.txt,0
 ./val/666620.txt,0
@@ -1674,7 +1674,7 @@ review,sentiment
 ./val/278682.txt,0
 ./val/274171.txt,0
 ./val/219588.txt,1
-./val/313156.txt,1
+./val/313156.txt,0
 ./val/881827.txt,1
 ./val/110755.txt,1
 ./val/262289.txt,0
@@ -1709,7 +1709,7 @@ review,sentiment
 ./val/459691.txt,0
 ./val/971478.txt,0
 ./val/777454.txt,0
-./val/719937.txt,1
+./val/719937.txt,0
 ./val/403826.txt,1
 ./val/156500.txt,1
 ./val/587929.txt,0
@@ -1842,7 +1842,7 @@ review,sentiment
 ./val/321713.txt,1
 ./val/178778.txt,1
 ./val/429864.txt,0
-./val/389258.txt,0
+./val/389258.txt,1
 ./val/615569.txt,0
 ./val/501130.txt,1
 ./val/283005.txt,1
@@ -1871,7 +1871,7 @@ review,sentiment
 ./val/883877.txt,0
 ./val/975726.txt,0
 ./val/406904.txt,0
-./val/702772.txt,0
+./val/702772.txt,1
 ./val/834689.txt,1
 ./val/536468.txt,1
 ./val/461638.txt,1
@@ -1896,7 +1896,7 @@ review,sentiment
 ./val/399638.txt,0
 ./val/696788.txt,1
 ./val/933758.txt,0
-./val/125944.txt,0
+./val/125944.txt,1
 ./val/663280.txt,1
 ./val/889383.txt,0
 ./val/834252.txt,1
@@ -1945,7 +1945,7 @@ review,sentiment
 ./val/471591.txt,1
 ./val/235476.txt,0
 ./val/315378.txt,0
-./val/873225.txt,1
+./val/873225.txt,0
 ./val/787839.txt,1
 ./val/356211.txt,0
 ./val/978336.txt,1
@@ -2020,7 +2020,7 @@ review,sentiment
 ./val/797923.txt,0
 ./val/860161.txt,0
 ./val/080606.txt,0
-./val/353068.txt,0
+./val/353068.txt,1
 ./val/649831.txt,0
 ./val/359192.txt,0
 ./val/169422.txt,0
@@ -2066,7 +2066,7 @@ review,sentiment
 ./val/613368.txt,0
 ./val/187304.txt,0
 ./val/824957.txt,0
-./val/328949.txt,0
+./val/328949.txt,1
 ./val/784270.txt,1
 ./val/078687.txt,0
 ./val/936825.txt,1
@@ -2171,7 +2171,7 @@ review,sentiment
 ./val/808879.txt,1
 ./val/583367.txt,0
 ./val/235065.txt,1
-./val/161602.txt,1
+./val/161602.txt,0
 ./val/094256.txt,0
 ./val/876138.txt,0
 ./val/127217.txt,1
@@ -2232,7 +2232,7 @@ review,sentiment
 ./val/621348.txt,1
 ./val/498153.txt,0
 ./val/608374.txt,1
-./val/309903.txt,1
+./val/309903.txt,0
 ./val/124302.txt,0
 ./val/588183.txt,1
 ./val/536769.txt,0
@@ -2323,7 +2323,7 @@ review,sentiment
 ./val/264342.txt,1
 ./val/464637.txt,1
 ./val/151205.txt,1
-./val/790049.txt,1
+./val/790049.txt,0
 ./val/899966.txt,0
 ./val/160568.txt,1
 ./val/650525.txt,1
@@ -2573,7 +2573,7 @@ review,sentiment
 ./val/304348.txt,0
 ./val/445507.txt,0
 ./val/832377.txt,0
-./val/205598.txt,0
+./val/205598.txt,1
 ./val/118868.txt,0
 ./val/311241.txt,1
 ./val/640984.txt,1
@@ -2633,7 +2633,7 @@ review,sentiment
 ./val/369997.txt,0
 ./val/474472.txt,0
 ./val/266953.txt,0
-./val/035068.txt,0
+./val/035068.txt,1
 ./val/427458.txt,1
 ./val/998403.txt,0
 ./val/717818.txt,0
@@ -3064,7 +3064,7 @@ review,sentiment
 ./val/395453.txt,0
 ./val/497248.txt,1
 ./val/950317.txt,1
-./val/196976.txt,1
+./val/196976.txt,0
 ./val/769054.txt,1
 ./val/070726.txt,0
 ./val/882877.txt,1
@@ -3451,7 +3451,7 @@ review,sentiment
 ./val/071665.txt,1
 ./val/455444.txt,1
 ./val/732517.txt,0
-./val/184537.txt,1
+./val/184537.txt,0
 ./val/684437.txt,1
 ./val/300206.txt,0
 ./val/209226.txt,0
@@ -3601,7 +3601,7 @@ review,sentiment
 ./val/759403.txt,0
 ./val/464905.txt,1
 ./val/403288.txt,0
-./val/932535.txt,0
+./val/932535.txt,1
 ./val/387628.txt,1
 ./val/765010.txt,0
 ./val/861631.txt,1
@@ -3706,7 +3706,7 @@ review,sentiment
 ./val/263745.txt,0
 ./val/620837.txt,0
 ./val/872241.txt,0
-./val/717148.txt,0
+./val/717148.txt,1
 ./val/204265.txt,0
 ./val/692838.txt,0
 ./val/893265.txt,1
@@ -3716,7 +3716,7 @@ review,sentiment
 ./val/394985.txt,0
 ./val/608575.txt,0
 ./val/881023.txt,0
-./val/268768.txt,1
+./val/268768.txt,0
 ./val/964415.txt,0
 ./val/324716.txt,0
 ./val/519644.txt,0
@@ -3982,7 +3982,7 @@ review,sentiment
 ./val/312682.txt,0
 ./val/626786.txt,1
 ./val/113995.txt,0
-./val/780328.txt,1
+./val/780328.txt,0
 ./val/760372.txt,0
 ./val/588521.txt,0
 ./val/218558.txt,1
@@ -4166,7 +4166,7 @@ review,sentiment
 ./val/008635.txt,0
 ./val/276164.txt,1
 ./val/381353.txt,1
-./val/926322.txt,0
+./val/926322.txt,1
 ./val/066150.txt,0
 ./val/878929.txt,1
 ./val/858808.txt,0
@@ -4264,7 +4264,7 @@ review,sentiment
 ./val/988371.txt,1
 ./val/461768.txt,0
 ./val/748596.txt,0
-./val/948501.txt,0
+./val/948501.txt,1
 ./val/187783.txt,1
 ./val/833063.txt,0
 ./val/546763.txt,0
@@ -4574,7 +4574,7 @@ review,sentiment
 ./val/648738.txt,1
 ./val/745973.txt,0
 ./val/571043.txt,1
-./val/232144.txt,0
+./val/232144.txt,1
 ./val/737582.txt,0
 ./val/601142.txt,1
 ./val/058428.txt,1
@@ -4594,7 +4594,7 @@ review,sentiment
 ./val/046466.txt,0
 ./val/551879.txt,0
 ./val/046170.txt,1
-./val/485411.txt,0
+./val/485411.txt,1
 ./val/015601.txt,1
 ./val/309880.txt,0
 ./val/825577.txt,1
@@ -4768,7 +4768,7 @@ review,sentiment
 ./val/035757.txt,0
 ./val/043672.txt,1
 ./val/961199.txt,1
-./val/020659.txt,0
+./val/020659.txt,1
 ./val/551078.txt,1
 ./val/859749.txt,0
 ./val/494057.txt,0
@@ -4861,7 +4861,7 @@ review,sentiment
 ./val/640415.txt,0
 ./val/261643.txt,0
 ./val/297304.txt,0
-./val/250111.txt,0
+./val/250111.txt,1
 ./val/016143.txt,1
 ./val/456918.txt,0
 ./val/924989.txt,1
@@ -4974,7 +4974,7 @@ review,sentiment
 ./val/118668.txt,1
 ./val/353728.txt,0
 ./val/027534.txt,1
-./val/206814.txt,1
+./val/206814.txt,0
 ./val/803012.txt,1
 ./val/331186.txt,1
 ./val/856763.txt,0

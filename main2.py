@@ -30,7 +30,7 @@ class Tokenizer:
         tokens = [token for token in tokens if token not in self.stop_words]
         return tokens
     
-    def build_vocab(self, texts, vocab_size=10000):
+    def build_vocab(self, texts, vocab_size=1000):
         word_counts = defaultdict(int)
         for text in texts:
             tokens = self.tokenize(text)
@@ -61,6 +61,9 @@ class NaiveBayesClassifier:
         self.alpha = alpha  # Smoothing factor
 
     def train(self, X, y):
+        # Number of features is now set by the size of X (which is controlled by vocab size)
+        self.vocab_size = X.shape[1]
+        
         # Calculate priors P(positive), P(negative)
         num_docs = len(y)
         num_positive = np.sum(y)
@@ -70,8 +73,8 @@ class NaiveBayesClassifier:
         self.prior_negative = num_negative / num_docs
         
         # Count word occurrences in positive and negative documents
-        positive_counts = np.zeros(X.shape[1])
-        negative_counts = np.zeros(X.shape[1])
+        positive_counts = np.zeros(self.vocab_size)
+        negative_counts = np.zeros(self.vocab_size)
         
         for i, label in enumerate(y):
             if label == 1:
@@ -80,7 +83,6 @@ class NaiveBayesClassifier:
                 negative_counts += X[i]
 
         # Apply Laplace smoothing and calculate conditional probabilities
-        # Smoothing factor alpha
         self.positive_word_probs = (positive_counts + self.alpha) / (num_positive + self.alpha * self.vocab_size)
         self.negative_word_probs = (negative_counts + self.alpha) / (num_negative + self.alpha * self.vocab_size)
     
@@ -93,6 +95,7 @@ class NaiveBayesClassifier:
         negative_scores = X @ np.log(self.negative_word_probs) + (1 - X) @ np.log(1 - self.negative_word_probs)
         
         return (log_prior_positive + positive_scores) >= (log_prior_negative + negative_scores)
+
 # Function to calculate metrics
 def compute_metrics(true_labels, pred_labels):
     true_positives = np.sum((true_labels == 1) & (pred_labels == 1))
@@ -143,7 +146,7 @@ def main(data_src):
 
     # Tokenize and convert texts to binary feature vectors
     tokenizer = Tokenizer()
-    tokenizer.build_vocab(train_texts)
+    tokenizer.build_vocab(train_texts, vocab_size=1000)  # Set vocab size to 1,000
     
     X_train = np.array([tokenizer.text_to_binary_vector(text) for text in train_texts])
     X_val = np.array([tokenizer.text_to_binary_vector(text) for text in val_texts])

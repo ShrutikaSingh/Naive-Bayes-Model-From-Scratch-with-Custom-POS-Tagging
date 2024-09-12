@@ -201,7 +201,7 @@ review,sentiment
 ./test/618041.txt,1
 ./test/641134.txt,1
 ./test/995032.txt,0
-./test/596818.txt,1
+./test/596818.txt,0
 ./test/544786.txt,1
 ./test/019110.txt,1
 ./test/365513.txt,1
@@ -520,7 +520,7 @@ review,sentiment
 ./test/349561.txt,0
 ./test/394700.txt,1
 ./test/780582.txt,1
-./test/679655.txt,1
+./test/679655.txt,0
 ./test/929447.txt,0
 ./test/788860.txt,0
 ./test/415737.txt,0
@@ -831,7 +831,7 @@ review,sentiment
 ./test/790794.txt,0
 ./test/224039.txt,0
 ./test/084223.txt,0
-./test/643255.txt,0
+./test/643255.txt,1
 ./test/150714.txt,0
 ./test/529020.txt,1
 ./test/497902.txt,1
@@ -1098,7 +1098,7 @@ review,sentiment
 ./test/358873.txt,0
 ./test/224204.txt,0
 ./test/018237.txt,1
-./test/413195.txt,0
+./test/413195.txt,1
 ./test/183765.txt,0
 ./test/786446.txt,0
 ./test/032623.txt,0
@@ -1298,7 +1298,7 @@ review,sentiment
 ./test/184482.txt,0
 ./test/121758.txt,1
 ./test/355075.txt,1
-./test/104296.txt,0
+./test/104296.txt,1
 ./test/827231.txt,0
 ./test/120320.txt,0
 ./test/456733.txt,1
@@ -1316,7 +1316,7 @@ review,sentiment
 ./test/986548.txt,1
 ./test/469460.txt,1
 ./test/421418.txt,0
-./test/983430.txt,0
+./test/983430.txt,1
 ./test/786179.txt,0
 ./test/601002.txt,1
 ./test/945265.txt,0
@@ -1719,7 +1719,7 @@ review,sentiment
 ./test/786379.txt,1
 ./test/997123.txt,0
 ./test/273311.txt,1
-./test/883156.txt,0
+./test/883156.txt,1
 ./test/933681.txt,0
 ./test/877969.txt,1
 ./test/762570.txt,0
@@ -1735,7 +1735,7 @@ review,sentiment
 ./test/395455.txt,1
 ./test/788195.txt,0
 ./test/352678.txt,1
-./test/164400.txt,1
+./test/164400.txt,0
 ./test/335185.txt,1
 ./test/118911.txt,0
 ./test/975415.txt,1
@@ -1996,7 +1996,7 @@ review,sentiment
 ./test/438359.txt,1
 ./test/805323.txt,0
 ./test/044515.txt,0
-./test/861869.txt,1
+./test/861869.txt,0
 ./test/770399.txt,1
 ./test/029909.txt,1
 ./test/020093.txt,0
@@ -2216,7 +2216,7 @@ review,sentiment
 ./test/442555.txt,0
 ./test/576182.txt,1
 ./test/291556.txt,1
-./test/358742.txt,0
+./test/358742.txt,1
 ./test/217727.txt,0
 ./test/486517.txt,1
 ./test/162466.txt,0
@@ -2312,7 +2312,7 @@ review,sentiment
 ./test/706556.txt,1
 ./test/468579.txt,1
 ./test/477459.txt,1
-./test/326459.txt,0
+./test/326459.txt,1
 ./test/544939.txt,1
 ./test/998217.txt,1
 ./test/149754.txt,1
@@ -2321,7 +2321,7 @@ review,sentiment
 ./test/764462.txt,1
 ./test/128427.txt,0
 ./test/684582.txt,1
-./test/364695.txt,0
+./test/364695.txt,1
 ./test/975638.txt,1
 ./test/760162.txt,0
 ./test/669152.txt,0
@@ -2354,7 +2354,7 @@ review,sentiment
 ./test/000382.txt,0
 ./test/928270.txt,0
 ./test/596103.txt,1
-./test/285318.txt,0
+./test/285318.txt,1
 ./test/622436.txt,1
 ./test/739764.txt,0
 ./test/284760.txt,1
@@ -2571,7 +2571,7 @@ review,sentiment
 ./test/066340.txt,1
 ./test/253357.txt,1
 ./test/138228.txt,1
-./test/033369.txt,0
+./test/033369.txt,1
 ./test/920225.txt,1
 ./test/916797.txt,1
 ./test/754195.txt,1
@@ -2723,7 +2723,7 @@ review,sentiment
 ./test/460458.txt,1
 ./test/340289.txt,1
 ./test/651167.txt,1
-./test/621480.txt,1
+./test/621480.txt,0
 ./test/057995.txt,1
 ./test/783753.txt,0
 ./test/905107.txt,1
@@ -2785,9 +2785,9 @@ review,sentiment
 ./test/263901.txt,1
 ./test/903827.txt,0
 ./test/304030.txt,1
-./test/010943.txt,1
+./test/010943.txt,0
 ./test/954957.txt,0
-./test/261680.txt,0
+./test/261680.txt,1
 ./test/554312.txt,1
 ./test/351031.txt,1
 ./test/222975.txt,1
@@ -2851,7 +2851,7 @@ review,sentiment
 ./test/625545.txt,0
 ./test/026571.txt,0
 ./test/034175.txt,1
-./test/077070.txt,1
+./test/077070.txt,0
 ./test/979623.txt,0
 ./test/349898.txt,1
 ./test/587612.txt,0
@@ -2878,7 +2878,7 @@ review,sentiment
 ./test/113079.txt,1
 ./test/647101.txt,1
 ./test/098738.txt,1
-./test/704038.txt,1
+./test/704038.txt,0
 ./test/939950.txt,0
 ./test/143128.txt,1
 ./test/087156.txt,0
@@ -2985,7 +2985,7 @@ review,sentiment
 ./test/602924.txt,0
 ./test/549235.txt,0
 ./test/179101.txt,0
-./test/456467.txt,0
+./test/456467.txt,1
 ./test/022111.txt,0
 ./test/215705.txt,1
 ./test/661273.txt,1
@@ -3058,7 +3058,7 @@ review,sentiment
 ./test/127518.txt,0
 ./test/419173.txt,0
 ./test/148861.txt,1
-./test/675777.txt,1
+./test/675777.txt,0
 ./test/509374.txt,1
 ./test/882916.txt,0
 ./test/816636.txt,1
@@ -3112,7 +3112,7 @@ review,sentiment
 ./test/583893.txt,0
 ./test/658949.txt,1
 ./test/825405.txt,1
-./test/772178.txt,0
+./test/772178.txt,1
 ./test/959914.txt,0
 ./test/163548.txt,1
 ./test/699873.txt,0
@@ -3229,7 +3229,7 @@ review,sentiment
 ./test/408654.txt,1
 ./test/422917.txt,0
 ./test/518453.txt,0
-./test/803388.txt,0
+./test/803388.txt,1
 ./test/225589.txt,0
 ./test/148087.txt,0
 ./test/630373.txt,1
@@ -3407,7 +3407,7 @@ review,sentiment
 ./test/140579.txt,1
 ./test/605493.txt,1
 ./test/247457.txt,1
-./test/727626.txt,0
+./test/727626.txt,1
 ./test/700299.txt,0
 ./test/737353.txt,1
 ./test/633647.txt,1
@@ -3449,7 +3449,7 @@ review,sentiment
 ./test/917868.txt,0
 ./test/825602.txt,1
 ./test/519572.txt,1
-./test/954789.txt,0
+./test/954789.txt,1
 ./test/546710.txt,0
 ./test/761303.txt,1
 ./test/685913.txt,0
@@ -3470,7 +3470,7 @@ review,sentiment
 ./test/476610.txt,0
 ./test/981163.txt,1
 ./test/104071.txt,1
-./test/370984.txt,0
+./test/370984.txt,1
 ./test/273527.txt,1
 ./test/120879.txt,0
 ./test/827968.txt,0
@@ -3486,7 +3486,7 @@ review,sentiment
 ./test/813359.txt,0
 ./test/806032.txt,1
 ./test/050378.txt,1
-./test/806754.txt,1
+./test/806754.txt,0
 ./test/563551.txt,0
 ./test/104729.txt,1
 ./test/198266.txt,0
@@ -3854,7 +3854,7 @@ review,sentiment
 ./test/525760.txt,1
 ./test/098764.txt,1
 ./test/856475.txt,0
-./test/546589.txt,0
+./test/546589.txt,1
 ./test/839059.txt,1
 ./test/820508.txt,0
 ./test/285772.txt,1
@@ -4123,7 +4123,7 @@ review,sentiment
 ./test/735053.txt,0
 ./test/050490.txt,0
 ./test/078308.txt,1
-./test/125769.txt,0
+./test/125769.txt,1
 ./test/516632.txt,1
 ./test/793858.txt,1
 ./test/998482.txt,0
@@ -4296,7 +4296,7 @@ review,sentiment
 ./test/294709.txt,1
 ./test/994656.txt,1
 ./test/226144.txt,1
-./test/000891.txt,1
+./test/000891.txt,0
 ./test/625862.txt,0
 ./test/316905.txt,0
 ./test/918888.txt,1
@@ -4346,7 +4346,7 @@ review,sentiment
 ./test/394325.txt,1
 ./test/408357.txt,0
 ./test/394331.txt,0
-./test/031721.txt,1
+./test/031721.txt,0
 ./test/502108.txt,0
 ./test/108822.txt,0
 ./test/488219.txt,0
@@ -4531,7 +4531,7 @@ review,sentiment
 ./test/923416.txt,1
 ./test/509676.txt,1
 ./test/174442.txt,0
-./test/370850.txt,0
+./test/370850.txt,1
 ./test/679467.txt,1
 ./test/449508.txt,1
 ./test/456428.txt,1
@@ -4715,7 +4715,7 @@ review,sentiment
 ./test/671617.txt,0
 ./test/604288.txt,0
 ./test/869469.txt,1
-./test/070034.txt,0
+./test/070034.txt,1
 ./test/935316.txt,1
 ./test/213265.txt,1
 ./test/383676.txt,0
@@ -4788,7 +4788,7 @@ review,sentiment
 ./test/984898.txt,0
 ./test/608539.txt,0
 ./test/288870.txt,0
-./test/994453.txt,0
+./test/994453.txt,1
 ./test/665931.txt,0
 ./test/231629.txt,0
 ./test/435614.txt,0
@@ -4902,7 +4902,7 @@ review,sentiment
 ./test/560402.txt,0
 ./test/495689.txt,0
 ./test/887162.txt,0
-./test/592680.txt,1
+./test/592680.txt,0
 ./test/071920.txt,1
 ./test/782359.txt,1
 ./test/375240.txt,0
