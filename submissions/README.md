@@ -113,6 +113,6 @@ Validation Recall: 0.8455
 
 Validation F1: 0.8553
 
-
-<img width="1005" alt="image" src="https://github.com/user-attachments/assets/9a41d036-0ede-4069-aa23-6a2bdda0b798">
+My Observations for Evaluation Metrices:
+<img width="1476" alt="image" src="https://github.com/user-attachments/assets/6a8ef228-10ef-4a53-9c0b-fc120e6bc55b">
 
