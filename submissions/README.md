@@ -16,6 +16,41 @@
 └── val_predictions.csv   -> Generated val_predictions.csv with headers as  `review,sentiment  Rows looks like this  ./val/597852.txt,1 `
 
 
+## Folder Structure with Description
+
+The following is the folder structure of the project along with descriptions for each file:
+
+- **K1000_main.py**  
+  This is Naive Bayes with vocab size = 1000
+
+- **README.md**  
+  Contains details for the main assignment
+
+- **Shrutika_CSCI444_1_MAIN_REPORT (1).pdf**  
+  This is the report
+
+- **main.py**  
+  This is the main code for Naive Bayes with vocab size = 10000
+
+- **requirements.txt**  
+  This file lists the libraries required for the main homework. (Bonus requirement file is separate in the Bonus Folder)
+
+- **test_paths.csv**  
+  Contains paths to test files.
+
+- **test_predictions.csv**  
+  Generated `test_predictions.csv` with headers as `review,sentiment`. Rows look like this: `./test/354863.txt,0`
+
+- **train_labels.csv**  
+  Contains training labels.
+
+- **val_labels.csv**  
+  Contains validation labels.
+
+- **val_predictions.csv**  
+  Generated `val_predictions.csv` with headers as `review,sentiment`. Rows look like this: `./val/597852.txt,1`
+
+
 ## RUNNING THE CODE
 
 ###  Step 1
