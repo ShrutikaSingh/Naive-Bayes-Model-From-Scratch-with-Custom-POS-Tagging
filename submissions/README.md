@@ -72,11 +72,10 @@ OUTPUT
 
 
 ## For Vocal Size = 1000
-python K1000_main.py --data_src <PATH_OF_DATA_FOLDER>
+> python K1000_main.py --data_src <PATH_OF_DATA_FOLDER>
 
-In My Case
-
-python3 K1000_main.py --data_src /Users/206819985/Documents/csci_444_assign/hw1-imdb
+In My Case, the command was like this :
+> python3 K1000_main.py --data_src /Users/206819985/Documents/csci_444_assign/hw1-imdb
 
 <img width="1012" alt="image" src="https://github.com/user-attachments/assets/623fd155-b310-4f9c-b5c6-f52c7b73dd40">
 
@@ -92,6 +91,7 @@ python3 K1000_main.py --data_src /Users/206819985/Documents/csci_444_assign/hw1-
 ## Other Accuracy
 
 ### Evaluarion Metrices After Removing Stop Words (vocab length = 10000)
+
 > (venv) 206819985@OTS-FVFHK1DWQ05Q-MAC hw1-imdb % python3 main.py --data_src /Users/206819985/Documents/csci_444_assign/hw1-imdb
 
 Validation Accuracy: 0.8552
