@@ -2,43 +2,7 @@
 # Sentiment Analysis with Naive Bayes
 
 ## Overview
-This project implements a Naive Bayes classifier for sentiment analysis using a custom tokenizer and binary vector representation of text. 
-
-## Implementation
-
-### 1. Tokenizer Class
-- **Function:** Converts text to lowercase, tokenizes it into words, and removes common stop words to retain only meaningful terms.
-
-### 2. Vocabulary Building
-- **Approach:** Constructs a vocabulary of the most frequent words from the training texts, limited by a specified size (`vocab_size`) to balance detail and manageability.
-
-### 3. Binary Vector Representation
-- **Purpose:** Transforms text into binary vectors where each element indicates the presence or absence of a word from the vocabulary, simplifying the input for the Naive Bayes model.
-
-### 4. Naive Bayes Classifier
-- **Training:** Computes prior probabilities for each sentiment class and estimates conditional word probabilities, applying Laplace smoothing to handle unseen words and prevent zero probabilities.
-
-### 5. Model Evaluation
-- **Metrics:** Evaluates model performance using accuracy, precision, recall, and F1-score on the validation dataset to measure its effectiveness in sentiment classification.
-
-### 6. Implementation Choices
-- **Stop Words Removal:** Filters out common stop words to reduce noise and focus on more meaningful terms in the texts.
-- **Vocabulary Size:** Limits vocabulary to manage computational complexity and retain only the most relevant terms for classification.
-
-## Usage
-1. **Prepare Data:** Ensure your data is organized into `train`, `val`, and `test` splits with text and labels.
-2. **Run the Model:**
-   ```bash python main.py --data_src <PATH_to_DATA_FOLDER> ```
-
-## Steps Followed:
-
-Loads the training, validation, and test data.
-
-Trains a Naive Bayes model on the training data.
-
-Evaluates the model on the validation set and prints the accuracy, precision, recall, and F1 score.
-
-Saves the validation and test predictions to CSV files.
+This project implements a Naive Bayes classifier for sentiment analysis using a custom tokenizer and binary vector representation of text for IMDB Dataset. 
 
 ## Folder structure with Description
 The following is the folder structure of the project along with descriptions for each file:
@@ -152,3 +116,39 @@ Validation F1: 0.8553
 My Observations for Evaluation Metrices:
 <img width="1476" alt="image" src="https://github.com/user-attachments/assets/6a8ef228-10ef-4a53-9c0b-fc120e6bc55b">
 
+
+## Implementation
+
+### 1. Tokenizer Class
+- **Function:** Converts text to lowercase, tokenizes it into words, and removes common stop words to retain only meaningful terms.
+
+### 2. Vocabulary Building
+- **Approach:** Constructs a vocabulary of the most frequent words from the training texts, limited by a specified size (`vocab_size`) to balance detail and manageability.
+
+### 3. Binary Vector Representation
+- **Purpose:** Transforms text into binary vectors where each element indicates the presence or absence of a word from the vocabulary, simplifying the input for the Naive Bayes model.
+
+### 4. Naive Bayes Classifier
+- **Training:** Computes prior probabilities for each sentiment class and estimates conditional word probabilities, applying Laplace smoothing to handle unseen words and prevent zero probabilities.
+
+### 5. Model Evaluation
+- **Metrics:** Evaluates model performance using accuracy, precision, recall, and F1-score on the validation dataset to measure its effectiveness in sentiment classification.
+
+### 6. Implementation Choices
+- **Stop Words Removal:** Filters out common stop words to reduce noise and focus on more meaningful terms in the texts.
+- **Vocabulary Size:** Limits vocabulary to manage computational complexity and retain only the most relevant terms for classification.
+
+## Usage
+1. **Prepare Data:** Ensure your data is organized into `train`, `val`, and `test` splits with text and labels.
+2. **Run the Model:**
+   ```bash python main.py --data_src <PATH_to_DATA_FOLDER> ```
+
+## Steps Followed:
+
+Loads the training, validation, and test data.
+
+Trains a Naive Bayes model on the training data.
+
+Evaluates the model on the validation set and prints the accuracy, precision, recall, and F1 score.
+
+Saves the validation and test predictions to CSV files.
