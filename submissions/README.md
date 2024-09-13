@@ -1,3 +1,59 @@
+
+
+## Folder structure with Description
+
+(venv) 206819985@OTS-FVFHK1DWQ05Q-MAC submissions % tree
+.
+├── K1000_main.py         -> This is Naive Bayes with vocab size = 1000
+├── README.md             -> Contains Details for main assignment
+├── Shrutika_CSCI444_1_MAIN_REPORT  (1).pdf   -> This is Report
+├── main.py               -> This is main code for Naive Bayes with Vocab Size = 10000
+├── requirements.txt      -> This is requirements for libraries for main hw (Bonus requirement file is separate in Bonus Folder)
+├── test_paths.csv        
+├── test_predictions.csv  -> Generated test_predictions.csv with headers as `review,sentiment Rows looks like this  ./test/354863.txt,0`
+├── train_labels.csv
+├── val_labels.csv
+└── val_predictions.csv   -> Generated val_predictions.csv with headers as  `review,sentiment  Rows looks like this  ./val/597852.txt,1 `
+
+
+## RUNNING THE CODE
+
+###  Step 1
+cd into sumbmission folder
+
+(venv) 206819985@OTS-FVFHK1DWQ05Q-MAC submissions % pwd
+/Users/206819985/Documents/csci_444_assign/hw1-imdb/submissions
+
+### Step 2
+Copy the name of folder where your test, train and val data is located
+In my case it is located at : /Users/206819985/Documents/csci_444_assign/hw1-imdb
+
+## For Vocab Size = 10000
+
+### Step 3
+Run the following command
+> python main.py --data_src <PATH_OF_DATA_FOLDER>
+
+IN MY Case
+>python3 main.py --data_src /Users/206819985/Documents/csci_444_assign/hw1-imdb
+
+
+### Step 4
+OUTPUT
+
+<img width="968" alt="image" src="https://github.com/user-attachments/assets/b07a4e65-80d0-4b7e-8dd0-9107b8fbc769">
+
+
+## For Vocal Size = 1000
+python K1000_main.py --data_src <PATH_OF_DATA_FOLDER>
+
+In My Case
+
+python3 K1000_main.py --data_src /Users/206819985/Documents/csci_444_assign/hw1-imdb
+
+<img width="1012" alt="image" src="https://github.com/user-attachments/assets/623fd155-b310-4f9c-b5c6-f52c7b73dd40">
+
+
 ### Overview
 This repository contains 50k IMDB movie reviews, collected by [Maas et al. (2011)](https://ai.stanford.edu/~ang/papers/acl11-WordVectorsSentimentAnalysis.pdf). The files have not been modified from their original form, except for the name of the file. Ambiguous reviews (original score is 5 or 6 out of 10) are not included.
 
@@ -11,6 +67,8 @@ The `_labels.csv` files have two columns:
 
 ### Output format
 A complete submission for this assignment will include a file called `test_predictions.csv` that is formatted like `*_labels.csv`. The `sentiment` column should only contain the integers 0 for negative and 1 for positive.
+
+
 
 
 python3 main.py --data_src /Users/206819985/Documents/csci_444_assign/hw1-imdb
