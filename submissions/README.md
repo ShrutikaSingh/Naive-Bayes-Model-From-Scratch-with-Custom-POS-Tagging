@@ -45,12 +45,13 @@ The following is the folder structure of the project along with descriptions for
 ###  Step 1
 cd into sumbmission folder
 
-(venv) 206819985@OTS-FVFHK1DWQ05Q-MAC submissions % pwd
-/Users/206819985/Documents/csci_444_assign/hw1-imdb/submissions
+> (venv) 206819985@OTS-FVFHK1DWQ05Q-MAC submissions % pwd
+      /Users/206819985/Documents/csci_444_assign/hw1-imdb/submissions
 
 ### Step 2
 Copy the name of folder where your test, train and val data is located
-In my case it is located at : /Users/206819985/Documents/csci_444_assign/hw1-imdb
+In my case it is located at : > /Users/206819985/Documents/csci_444_assign/hw1-imdb
+
 
 ## For Vocab Size = 10000
 
@@ -88,22 +89,25 @@ python3 K1000_main.py --data_src /Users/206819985/Documents/csci_444_assign/hw1-
 
 ## Other Accuracy
 
+### Evaluarion Metrices After Removing Stop Words (vocab length = 10000)
+> (venv) 206819985@OTS-FVFHK1DWQ05Q-MAC hw1-imdb % python3 main.py --data_src /Users/206819985/Documents/csci_444_assign/hw1-imdb
 
-### Evaluarion Metrices After Removing Stop Words
-(venv) 206819985@OTS-FVFHK1DWQ05Q-MAC hw1-imdb % python3 main.py --data_src /Users/206819985/Documents/csci_444_assign/hw1-imdb
-
-vocab length = 10000
 Validation Accuracy: 0.8552
+
 Validation Precision: 0.8636
+
 Validation Recall: 0.8435
+
 Validation F1: 0.8534
 
 
-### Evaluation Metrices when Important words like Not, Nor ETC Have not been Removed
+### Evaluation Metrices when Important words like Not, Nor ETC Have not been Removed (vocab length = 10000)
 
-vocab length = 10000
 Validation Accuracy: 0.8570
+
 Validation Precision: 0.8653
+
 Validation Recall: 0.8455
+
 Validation F1: 0.8553
 
