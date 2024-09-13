@@ -50,7 +50,9 @@ cd into sumbmission folder
 
 ### Step 2
 Copy the name of folder where your test, train and val data is located
-In my case it is located at : > /Users/206819985/Documents/csci_444_assign/hw1-imdb
+
+In my case it is located at : 
+> /Users/206819985/Documents/csci_444_assign/hw1-imdb
 
 
 ## For Vocab Size = 10000
