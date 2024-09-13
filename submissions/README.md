@@ -5,9 +5,13 @@
 (venv) 206819985@OTS-FVFHK1DWQ05Q-MAC submissions % tree
 .
 ├── K1000_main.py         -> This is Naive Bayes with vocab size = 1000
+
 ├── README.md             -> Contains Details for main assignment
+
 ├── Shrutika_CSCI444_1_MAIN_REPORT  (1).pdf   -> This is Report
+
 ├── main.py               -> This is main code for Naive Bayes with Vocab Size = 10000
+
 ├── requirements.txt      -> This is requirements for libraries for main hw (Bonus requirement file is separate in Bonus Folder)
 ├── test_paths.csv        
 ├── test_predictions.csv  -> Generated test_predictions.csv with headers as `review,sentiment Rows looks like this  ./test/354863.txt,0`
