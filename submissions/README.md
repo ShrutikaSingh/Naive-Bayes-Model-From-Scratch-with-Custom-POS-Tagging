@@ -1,40 +1,17 @@
 
-
 ## Folder structure with Description
-
-(venv) 206819985@OTS-FVFHK1DWQ05Q-MAC submissions % tree
-.
-K1000_main.py         -> This is Naive Bayes with vocab size = 1000
-
-README.md             -> Contains Details for main assignment
-
-Shrutika_CSCI444_1_MAIN_REPORT  (1).pdf   -> This is Report
-
-main.py               -> This is main code for Naive Bayes with Vocab Size = 10000
-
-requirements.txt      -> This is requirements for libraries for main hw (Bonus requirement file is separate in Bonus Folder)
-
-test_paths.csv        
-
-test_predictions.csv  -> Generated test_predictions.csv with headers as `review,sentiment Rows looks like this  ./test/354863.txt,0`
-
-train_labels.csv
-val_labels.csv
-val_predictions.csv   -> Generated val_predictions.csv with headers as  `review,sentiment  Rows looks like this  ./val/597852.txt,1 `
-
-
-## Folder Structure with Description
-
 The following is the folder structure of the project along with descriptions for each file:
 
+(venv) 206819985@OTS-FVFHK1DWQ05Q-MAC submissions % tree
+
 - **K1000_main.py**  
-  This is Naive Bayes with vocab size = 1000
+  This is Naive Bayes Code with vocab size = 1000
 
 - **README.md**  
   Contains details for the main assignment
 
 - **Shrutika_CSCI444_1_MAIN_REPORT (1).pdf**  
-  This is the report
+  This is the report for main assignment of Naive Bayes Contatining Answers for Section: Tokenizer, Results, and Naive Bayes
 
 - **main.py**  
   This is the main code for Naive Bayes with vocab size = 10000
