@@ -113,3 +113,6 @@ Validation Recall: 0.8455
 
 Validation F1: 0.8553
 
+
+<img width="1005" alt="image" src="https://github.com/user-attachments/assets/9a41d036-0ede-4069-aa23-6a2bdda0b798">
+
