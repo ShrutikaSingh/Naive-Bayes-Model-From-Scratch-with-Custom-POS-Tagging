@@ -50,7 +50,7 @@ Since the code was taking more than 7 hrs to run, I created a dataset with a tot
 > python3 _bonus_3.py --data_src /Users/206819985/Documents/csci_444_assign/hw1-imdb/_bonus/data
 
 ### In my case
- ``` python3 _bonus_3.py --data_src /Users/206819985/Documents/csci_444_assign/hw1-imdb ```
+ ``` python3 _bonus_3.py --data_src /Users/206819985/Documents/csci_444_assign/hw1-imdb/_bonus/data ```
 
 ### Files Generated
 
