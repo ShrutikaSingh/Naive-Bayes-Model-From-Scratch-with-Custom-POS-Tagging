@@ -34,6 +34,15 @@ test_predictions.csv
 
 val_predictions.csv
 
+## My Observatiosn
+
+**Feature Assumptions:** Naive Bayes assumes that features are independent, thus going well with the bag-of-words approach. Therefore, this model can also result in better performance in those cases where the features are sparse, as in textual data.
+Simplicity with High Dimensionality: Naive Bayes is really efficient for high-dimensional feature space and less prone to overfitting, while Logistic Regression may be problematic in the case of high-dimensional data if it is not regularized properly.
+
+**Robustness to Noise**: Naive Bayes does not care about noisy features and/or irrelevant words. Because this is a probabilistic algorithm, it is pretty robust in cases of text data, where noise is quite common.
+
+**Effective with Sparse Data:** Naive Bayes should be more effective in the case of the binary features that are sparse in nature, like the presence or absence of words, because it does not need to normalize or scale. This will most probably work better than Logistic Regression in this case, where scaling of features is not quite appropriate.
+
 ### Results
 
 <img width="735" alt="image" src="https://github.com/user-attachments/assets/7f04a46b-dd6e-42ea-bbbd-b342df92b8e6">
@@ -59,6 +68,12 @@ Since the code was taking more than 7 hrs to run, I created a dataset with a tot
 test_predictions.csv
 
 val_predictions.csv
+
+## My Observation :
+
+For the smaller dataset (100 samples), the model with POS tagging performs worse, which aligns with the observation that more data might be needed to see if POS tagging could offer any improvements.
+But if the simple naive bayes is trained with just 100 samples without POS tagging, the performance is even worse. That means that with POS tagging , accuracy is  improved if we have a large data set.
+
 
 Results
 
