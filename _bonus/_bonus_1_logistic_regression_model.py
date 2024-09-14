@@ -162,14 +162,14 @@ def main(data_src):
     
     # Save predictions to CSV
     val_df = pd.DataFrame({'review': val_file_paths, 'prediction': val_preds})
-    val_df.to_csv(os.path.join(data_src, '_bonus_1_logistic_val_predictions.csv'), index=False)
+    val_df.to_csv(os.path.join(data_src, 'val_predictions.csv'), index=False)
     
     # Predict on test set
     test_preds = lr_classifier.predict(X_test)
     
     # Save test predictions to CSV
     test_df = pd.DataFrame({'review': test_file_paths, 'prediction': test_preds})
-    test_df.to_csv(os.path.join(data_src, '_bonus_1_logistic_test_predictions.csv'), index=False)
+    test_df.to_csv(os.path.join(data_src, 'test_predictions.csv'), index=False)
 
 # Execute main function
 if __name__ == "__main__":

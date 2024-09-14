@@ -3,8 +3,8 @@ import pandas as pd
 import numpy as np
 from collections import defaultdict
 import re
-
-# Tokenizer Class (No changes here)
+from sklearn.feature_extraction.text import TfidfVectorizer
+# Tokenizer Class (no changes required here)
 class Tokenizer:
     def __init__(self):
         self.vocab = defaultdict(int)  # Dictionary to store word frequencies
@@ -40,71 +40,69 @@ class Tokenizer:
         # Select the top `vocab_size` most frequent words
         most_common = sorted(word_counts.items(), key=lambda x: x[1], reverse=True)[:vocab_size]
         self.vocab = {word: idx for idx, (word, _) in enumerate(most_common)}
-        print("vocab length for Logistic Regression =", len(self.vocab))
+        print("vocab length =", len(self.vocab))
     
-    def text_to_count_vector(self, text):
-        vector = np.zeros(len(self.vocab))
-        tokens = self.tokenize(text)
-        for token in tokens:
-            if token in self.vocab:
-                vector[self.vocab[token]] += 1
-        return vector
+    def text_to_tfidf_vector(self, text, tfidf_vectorizer):
+        # Convert text to TF-IDF feature vector
+        return tfidf_vectorizer.transform([text]).toarray()[0]
 
-# Logistic Regression Classifier from Scratch
-class LogisticRegressionClassifierFromScratch:
-    def __init__(self, learning_rate=0.01, num_iterations=1000):
-        self.learning_rate = learning_rate
-        self.num_iterations = num_iterations
-        self.weights = None
-        self.bias = None
-    
-    def sigmoid(self, z):
-        return 1 / (1 + np.exp(-z))
-    
-    def initialize_parameters(self, n_features):
-        # Initialize weights and bias to zeros
-        self.weights = np.zeros(n_features)
-        self.bias = 0
+class NaiveBayesClassifier:
+    def __init__(self, alpha=1.0):
+        self.prior_positive = 0
+        self.prior_negative = 0
+        self.positive_word_probs = None
+        self.negative_word_probs = None
+        self.vocab_size = 0
+        self.alpha = alpha  # Smoothing factor
 
     def train(self, X, y):
-        n_samples, n_features = X.shape
-        self.initialize_parameters(n_features)
+        # Calculate priors P(positive), P(negative)
+        num_docs = len(y)
+        num_positive = np.sum(y)
+        num_negative = num_docs - num_positive
+        
+        self.prior_positive = num_positive / num_docs
+        self.prior_negative = num_negative / num_docs
+        
+        # Sum feature vectors for positive and negative classes
+        positive_counts = np.zeros(X.shape[1])
+        negative_counts = np.zeros(X.shape[1])
+        
+        for i, label in enumerate(y):
+            if label == 1:
+                positive_counts += X[i]
+            else:
+                negative_counts += X[i]
 
-        for _ in range(self.num_iterations):
-            # Linear model: y_hat = X * w + b
-            linear_model = np.dot(X, self.weights) + self.bias
-            # Apply sigmoid function
-            y_hat = self.sigmoid(linear_model)
-            
-            # Gradient computation
-            dw = (1 / n_samples) * np.dot(X.T, (y_hat - y))
-            db = (1 / n_samples) * np.sum(y_hat - y)
-            
-            # Update parameters
-            self.weights -= self.learning_rate * dw
-            self.bias -= self.learning_rate * db
+        # Apply Laplace smoothing and calculate conditional probabilities
+        self.positive_word_probs = (positive_counts + self.alpha) / (np.sum(positive_counts) + self.alpha * X.shape[1])
+        self.negative_word_probs = (negative_counts + self.alpha) / (np.sum(negative_counts) + self.alpha * X.shape[1])
     
     def predict(self, X):
-        linear_model = np.dot(X, self.weights) + self.bias
-        y_hat = self.sigmoid(linear_model)
-        # Convert probabilities to binary output (0 or 1)
-        return np.where(y_hat >= 0.5, 1, 0)
+        # Calculate log-probabilities for each class
+        log_prior_positive = np.log(self.prior_positive)
+        log_prior_negative = np.log(self.prior_negative)
+        
+        positive_scores = X @ np.log(self.positive_word_probs + 1e-9) + (1 - X) @ np.log(1 - self.positive_word_probs + 1e-9)
+        negative_scores = X @ np.log(self.negative_word_probs + 1e-9) + (1 - X) @ np.log(1 - self.negative_word_probs + 1e-9)
+        
+        return (log_prior_positive + positive_scores) >= (log_prior_negative + negative_scores)
 
+# Function to calculate metrics
 def compute_metrics(true_labels, pred_labels):
     true_positives = np.sum((true_labels == 1) & (pred_labels == 1))
     true_negatives = np.sum((true_labels == 0) & (pred_labels == 0))
     false_positives = np.sum((true_labels == 0) & (pred_labels == 1))
     false_negatives = np.sum((true_labels == 1) & (pred_labels == 0))
     
-    # Calculate accuracy, precision, recall, and F1 score
-    accuracy = (true_positives + true_negatives) / (true_positives + false_negatives + false_positives + true_negatives)
-    precision = true_positives / (true_positives + false_positives) if (true_positives + false_positives) != 0 else 0
-    recall = true_positives / (true_positives + false_negatives) if (true_positives + false_negatives) != 0 else 0
-    f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) != 0 else 0
+    accuracy = (true_positives + true_negatives) / (true_positives+false_negatives+false_positives+true_negatives)
+    precision = true_positives / (true_positives + false_positives) if (true_positives + false_positives) > 0 else 0
+    recall = true_positives / (true_positives + false_negatives) if (true_positives + false_negatives) > 0 else 0
+    f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
     
     return accuracy, precision, recall, f1
 
-# Function to load data
+# Load the data
 def load_data(data_dir, split):
     texts = []
     labels = []
@@ -130,51 +128,48 @@ def load_data(data_dir, split):
             labels.append(row['sentiment'])
         return file_paths, texts, np.array(labels)
 
-# Main function
 def main(data_src):
     # Load data
     train_file_paths, train_texts, train_labels = load_data(data_src, 'train')
     val_file_paths, val_texts, val_labels = load_data(data_src, 'val')
     test_file_paths, test_texts = load_data(data_src, 'test')
 
-    # Initialize and train tokenizer
+    # Tokenize and convert texts to TF-IDF feature vectors
     tokenizer = Tokenizer()
-    tokenizer.build_vocab(train_texts, vocab_size=10000)
-    
-    # Convert text to feature vectors
-    X_train = np.array([tokenizer.text_to_count_vector(text) for text in train_texts])
-    X_val = np.array([tokenizer.text_to_count_vector(text) for text in val_texts])
-    X_test = np.array([tokenizer.text_to_count_vector(text) for text in test_texts])
-    
-    # Train Logistic Regression classifier
-    lr_classifier = LogisticRegressionClassifierFromScratch(learning_rate=0.01, num_iterations=1000)
-    lr_classifier.train(X_train, train_labels)
-    
-    # Predict on validation set
-    val_preds = lr_classifier.predict(X_val)
-    
-    # Compute metrics for validation set
+    tokenizer.build_vocab(train_texts)
+
+    # Use TfidfVectorizer from sklearn to generate continuous features (FIXED)
+    tfidf_vectorizer = TfidfVectorizer(max_features=10000, vocabulary=tokenizer.vocab, stop_words=list(tokenizer.stop_words))
+    tfidf_vectorizer.fit(train_texts)
+
+    X_train = tfidf_vectorizer.transform(train_texts).toarray()
+    X_val = tfidf_vectorizer.transform(val_texts).toarray()
+    X_test = tfidf_vectorizer.transform(test_texts).toarray()
+
+    # Train Naive Bayes classifier
+    model = NaiveBayesClassifier()
+    model.train(X_train, train_labels)
+
+    # Predict on validation and test sets
+    val_preds = model.predict(X_val)
+    test_preds = model.predict(X_test)
+
+    # Save validation and test predictions to CSV
+    val_df = pd.DataFrame({'review': val_file_paths, 'sentiment': val_preds.astype(int)})
+    val_df.to_csv('val_predictions.csv', index=False)
+
+    test_df = pd.DataFrame({'review': test_file_paths, 'sentiment': test_preds.astype(int)})
+    test_df.to_csv('test_predictions.csv', index=False)
+
+    # Evaluate on validation set
     val_acc, val_prec, val_rec, val_f1 = compute_metrics(val_labels, val_preds)
     print(f"Validation Accuracy: {val_acc:.4f}")
     print(f"Validation Precision: {val_prec:.4f}")
     print(f"Validation Recall: {val_rec:.4f}")
     print(f"Validation F1: {val_f1:.4f}")
-    
-    # Save predictions to CSV
-    val_df = pd.DataFrame({'review': val_file_paths, 'prediction': val_preds})
-    val_df.to_csv(os.path.join(data_src, '_bonus_1_logistic_val_predictions.csv'), index=False)
-    
-    # Predict on test set
-    test_preds = lr_classifier.predict(X_test)
-    
-    # Save test predictions to CSV
-    test_df = pd.DataFrame({'review': test_file_paths, 'prediction': test_preds})
-    test_df.to_csv(os.path.join(data_src, '_bonus_1_logistic_test_predictions.csv'), index=False)
-
-# Execute main function
 if __name__ == "__main__":
     import argparse
-    parser = argparse.ArgumentParser(description="Naive Bayes Sentiment Classifier")
+    parser = argparse.ArgumentParser(description="Naive Bayes Sentiment Classifier with Continuous Features")
     parser.add_argument('--data_src', type=str, required=True, help="Path to the dataset folder")
     args = parser.parse_args()
 
